@@ -1,1 +1,1 @@
-angular.module('components.module', []);
+angular.module('components.module', ['components.homeComponent']);

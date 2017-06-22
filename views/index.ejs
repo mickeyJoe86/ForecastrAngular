@@ -7,14 +7,18 @@
     </head>
     <body ng-app="app">    
         <shared-header></shared-header>
-        <div id="main-containter"></div>
+
+        <div id="main-containter" ng-controller="HomeComponentController as $homeCtrl">
+            <p>{{ $homeCtrl.userName }}</P>
+        </div>
+
         <shared-footer></shared-footer>
         <!--main angular-->
         <script src="/angular.min.js"></script>
         <!-- inject:js -->
         <script src="/app/app.module.js"></script>
-        <script src="/app/components/components.module.js"></script>
         <script src="/app/shared/shared.module.js"></script>
+        <script src="/app/components/components.module.js"></script>
         <script src="/app/shared/footer/footerDirective.js"></script>
         <script src="/app/shared/header/headerDirective.js"></script>
         <script src="/app/components/home/homeComponent.js"></script>
