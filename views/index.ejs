@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>My Site</title>
+        <link rel="stylesheet" href="./assets/css/skeleton.css" />
+        <link rel="stylesheet" href="./assets/css/app.css" />
+    </head>
+    <body ng-app="app">    
+        <shared-header></shared-header>
+        <div id="main-containter"></div>
+        <shared-footer></shared-footer>
+        <!--main angular-->
+        <script src="./angular.min.js"></script>
+        <!--main modules-->
+        <script src="./app.module.js"></script>
+        <script src="./shared/shared.module.js"></script>
+        <script src="./components/components.module.js"></script>
+        <!--shared components-->
+        <script src="./shared/header/headerDirective.js"></script>
+        <script src="./shared/footer/footerDirective.js"></script>
+        <!--main components-->
+    </body>
+</html>
