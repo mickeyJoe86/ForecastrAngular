@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "prestart": "gulp inject",
+    "start": "nodemon server.js",
+    "gulp": "gulp"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,9 @@
     "express": "^4.15.3"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
+    "nodemon": "^1.11.0",
+    "stream-series": "^0.1.1"
   }
 }
