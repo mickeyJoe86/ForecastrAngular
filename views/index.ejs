@@ -9,7 +9,11 @@
         <shared-header></shared-header>
 
         <div id="main-containter" ng-controller="HomeComponentController as $homeCtrl">
-            <p>{{ $homeCtrl.userName }}</P>
+            <div id="currently">
+                <p>Temperature: {{ $homeCtrl.currently.temperature }}&deg</p>
+                <p>Precip: {{ $homeCtrl.currently.precipProbability }}&#37</p>
+                <p>Description: {{ $homeCtrl.currently.summary }}</p>
+            </div>
         </div>
 
         <shared-footer></shared-footer>

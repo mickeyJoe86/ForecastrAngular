@@ -3,7 +3,7 @@ angular.module('components.homeService', [])
         this.getUser = function() {
             var deferred = $q.defer();
             $http({
-                url: '/api/name',
+                url: '/api/forecast',
                 method: 'GET'
             }).then(function(data){
                 deferred.resolve(data);
