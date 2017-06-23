@@ -1,14 +1,14 @@
-#Seed Application for Angular 1.5+ 
+# Seed Application for Angular 1.5+ 
 
-##Prerequisites
+## Prerequisites
 
 Node and NPM
 
-##Components
+## Components
 
 Leverages Express, Angular 1.6, Skeleton framework
 
-##Instructions
+## Instructions
 
 Clone into local repo
 
