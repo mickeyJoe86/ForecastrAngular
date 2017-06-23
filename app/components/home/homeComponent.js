@@ -1,7 +1,7 @@
 angular.module('components.homeComponent', [])
     .controller('HomeComponentController', function (HomeService) {
-        this.userName = "Mike";
+        var self = this;
         HomeService.getUser().then(function(res){
-            this.userName = res.data.name;
+            self.userName = res.data.name;
         });
     });
