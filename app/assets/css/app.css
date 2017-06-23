@@ -1,3 +1,17 @@
-h1 {
-    font-family: sans-serif;
+body {
+    margin: 0;   
+}
+
+#main-containter {
+    margin-top: 70px;
+}
+
+.navbar-inverse {
+    background: #5591DF;
+    border-color: #5591DF;
+    padding: 8px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
 }
