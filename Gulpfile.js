@@ -8,6 +8,7 @@ gulp.task('inject', () => {
         './app/**/*.module.js'
     ], {read: false});
     let sharedComponents = gulp.src([
+        './app/**/*Service.js',
         './app/**/*Directive.js',
         './app/**/*Component.js'
     ], { read: false});
