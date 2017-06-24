@@ -51,7 +51,7 @@ gulp.task('clean',  () => {
         .pipe(clean());
 });
 
-gulp.task('default', ['clean', 'sass', 'scripts', 'copy-assets', 'start'], () => {
+gulp.task('default', ['sass', 'scripts', 'copy-assets', 'start'], () => {
 	gulp.watch('./src/assets/sass/**/*.scss', ['sass']);
 	gulp.watch('./src/**/*.js', ['scripts']);
 });
