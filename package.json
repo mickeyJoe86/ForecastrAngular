@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "gulp inject",
-    "start": "nodemon server.js",
+    "start": "gulp",
     "gulp": "gulp"
   },
   "author": "",
@@ -20,7 +19,12 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-inject": "^4.2.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "nodemon": "^1.11.0",
     "stream-series": "^0.1.1"
   }
