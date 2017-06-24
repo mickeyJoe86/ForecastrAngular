@@ -1,34 +1,35 @@
 <!Doctype html>
 <html>
-    <head>
-        <title>My Site</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="/app/assets/css/app.css" />
-    </head>
-    <body ng-app="app">    
-        <shared-header></shared-header>
+<head>
+	<title>Forecastr | Get Your Forecast</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="/app/assets/css/app.css" />
+</head>
+<body ng-app="app">
+	<shared-header></shared-header>
 
-        <div id="main-containter" ng-controller="HomeComponentController as $homeCtrl">
-            <div id="currently">
-                <p>Temperature: {{ $homeCtrl.currently.temperature }}&deg</p>
-                <p>Precip: {{ $homeCtrl.currently.precipProbability }}&#37</p>
-                <p>Description: {{ $homeCtrl.currently.summary }}</p>
-            </div>
-        </div>
+	<div id="main-containter" ng-controller="HomeComponentController as $homeCtrl">
+		<div id="currently">
+			<p>Temperature: {{ $homeCtrl.currently.temperature }}&deg</p>
+			<p>Precip: {{ $homeCtrl.currently.precipProbability }}&#37</p>
+			<p>Description: {{ $homeCtrl.currently.summary }}</p>
+		</div>
+	</div>
 
-        <shared-footer></shared-footer>
+	<shared-footer></shared-footer>
 
-        <!--main angular-->
-        <script src="/angular.min.js"></script>
-        <script src="/ui-bootstrap.js"></script>
-        <!-- inject:js -->
-        <script src="/app/app.module.js"></script>
-        <script src="/app/components/components.module.js"></script>
-        <script src="/app/shared/shared.module.js"></script>
-        <script src="/app/components/home/homeService.js"></script>
-        <script src="/app/shared/footer/footerDirective.js"></script>
-        <script src="/app/shared/header/headerDirective.js"></script>
-        <script src="/app/components/home/homeComponent.js"></script>
-        <!-- endinject -->
-    </body>
+	<!--main angular-->
+	<script src="/angular.min.js"></script>
+	<script src="/ui-bootstrap.js"></script>
+	<!-- inject:js -->
+	<script src="/app/app.module.js"></script>
+	<script src="/app/components/components.module.js"></script>
+	<script src="/app/shared/shared.module.js"></script>
+	<script src="/app/components/home/homeService.js"></script>
+	<script src="/app/shared/footer/footerDirective.js"></script>
+	<script src="/app/shared/header/headerDirective.js"></script>
+	<script src="/app/components/home/homeComponent.js"></script>
+	<!-- endinject -->
+</body>
 </html>
