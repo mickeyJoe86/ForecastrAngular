@@ -1,5 +1,5 @@
 angular.module('components.homeService', [])
-    .service('HomeService', function ($http, $q) {
+    .service('HomeService', ['$http', '$q', function ($http, $q) {
         this.getUser = function() {
             var deferred = $q.defer();
             $http({
@@ -10,4 +10,4 @@ angular.module('components.homeService', [])
             });
             return deferred.promise;
         }
-    });
+    }]);
