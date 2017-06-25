@@ -16,42 +16,43 @@ gulp.task('sass', () => {
 		.pipe(gulp.dest('./dist/assets/css'));
 });
 
-gulp.task('scripts', function() {
-    return gulp.src([
-			'./src/**/*.module.js',
-			'./src/**/*Service.js',
-			'./src/**/*Directive.js',
-			'./src/**/*Component.js'
-		])
-        .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./dist'))
-        .pipe(rename('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist'));
+gulp.task('scripts', function () {
+	return gulp.src([
+		'./src/**/*.module.js',
+		'./src/**/*Service.js',
+		'./src/**/*Directive.js',
+		'./src/**/*Component.js'
+	])
+		.pipe(concat('scripts.js'))
+		.pipe(gulp.dest('./dist'))
+		.pipe(rename('scripts.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('copy-assets', () => {
 	gulp.src([
 		'./src/**/*.html'
 	])
-	.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./dist'))
 
 });
 
 gulp.task('start', function () {
 	nodemon({
 		script: 'server.js',
-		ext: 'js html',
+		ext: 'js ejs',
 		env: { 'NODE_ENV': 'development' }
 	});
 });
 
-gulp.task('clean',  () => {
-    gulp.src('./dist', {read: false})
-        .pipe(clean());
+gulp.task('clean', () => {
+	gulp.src('./dist', { read: false })
+		.pipe(clean());
 });
 
-gulp.task('default', ['clean', 'sass', 'scripts', 'copy-assets', 'start'], () => {
+gulp.task('default', ['sass', 'scripts', 'copy-assets', 'start'], () => {
 	gulp.watch('./src/assets/sass/**/*.scss', ['sass']);
 	gulp.watch('./src/**/*.js', ['scripts']);
+	gulp.watch('./src/**/*.html', ['copy-assets']);
 });

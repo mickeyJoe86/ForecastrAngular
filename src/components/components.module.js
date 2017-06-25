@@ -1,4 +1,4 @@
 angular.module('components.module', [
-    'components.homeService', 
+    'components.homeService',
     'components.homeComponent'
 ]);
