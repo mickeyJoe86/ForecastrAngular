@@ -1,1 +1,1 @@
-angular.module('shared.module', ['shared.headerDirective', 'shared.footerDirective']);
+angular.module('shared.module', ['shared.footerDirective']);

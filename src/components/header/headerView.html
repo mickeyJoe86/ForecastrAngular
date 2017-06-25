@@ -1,12 +1,12 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Forecastr</a>
+			<a class="navbar-brand" href="#">{{ $ctrl.name }}</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
-			<form class="navbar-form navbar-right">
+			<form ng-submit="$ctrl.searchLocation()" class="navbar-form navbar-right">
 				<div class="form-group">
-					<input type="text" placeholder="Search your location" class="form-control">
+					<input type="text" placeholder="Search your location" class="form-control" ng-model="$ctrl.searchTerm">
 				</div>
 				<button type="submit" class="btn btn-success">Search</button>
 			</form>
