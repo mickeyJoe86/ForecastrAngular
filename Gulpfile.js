@@ -47,11 +47,11 @@ gulp.task('start', function () {
 });
 
 gulp.task('clean',  () => {
-    return gulp.src('./dist', {read: false})
+    gulp.src('./dist', {read: false})
         .pipe(clean());
 });
 
-gulp.task('default', ['sass', 'scripts', 'copy-assets', 'start'], () => {
+gulp.task('default', ['clean', 'sass', 'scripts', 'copy-assets', 'start'], () => {
 	gulp.watch('./src/assets/sass/**/*.scss', ['sass']);
 	gulp.watch('./src/**/*.js', ['scripts']);
 });
