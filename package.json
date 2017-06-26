@@ -19,6 +19,9 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-mocks": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
@@ -29,6 +32,11 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-spec-reporter": "0.0.31",
     "nodemon": "^1.11.0",
     "stream-series": "^0.1.1"
   }
