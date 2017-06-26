@@ -1,10 +1,11 @@
 angular.module('components.homeService', [])
     .service('HomeService', ['$http', '$q', function ($http, $q) {
-        this.getUser = function() {
+        this.getForecast = function(lat, lng) {
             var deferred = $q.defer();
             $http({
                 url: '/api/forecast',
-                method: 'GET'
+                method: 'POST',
+				data: { lat: lat, lng: lng }
             }).then(function(data){
                 deferred.resolve(data);
             });

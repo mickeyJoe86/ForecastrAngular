@@ -2,12 +2,11 @@ angular.module('components.homeComponent', [])
 	.component('homeComponent', {
 		transclude: true,
 		templateUrl: './dist/components/home/homeView.html',
-		controller: ['HomeService', function (HomeService) {
+		controller: ['HomeService', '$stateParams', function (HomeService, $stateParams) {
 			var ctrl = this;
-			ctrl.name = "Mike"
-			HomeService.getUser().then(function (res) {
-				ctrl.currently = res.data.currently
-				//console.log(res.data);
+
+			HomeService.getForecast($stateParams.lat, $stateParams.long).then(function (res) {
+				ctrl.currently = res.data.currently;
 			});
 		}]
 	});
