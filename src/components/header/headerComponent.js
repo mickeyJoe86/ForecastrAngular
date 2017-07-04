@@ -6,7 +6,7 @@ angular.module('components.headerComponent', [])
 			ctrl.name = "Forecastr";
 			ctrl.searchLocation = function () {
 				GelocationService.getCoordinates(ctrl.searchTerm).then(function(res){
-					var latLong = res.data.results[0].geometry.location;
+					var latLong = res.results[0].geometry.location;
 					$location.url(latLong.lat + '/' + latLong.lng);
 				});
 			}

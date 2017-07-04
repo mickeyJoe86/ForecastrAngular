@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "start": "gulp",
-    "gulp": "gulp"
+    "start": "gulp"
   },
   "author": "",
   "license": "ISC",
