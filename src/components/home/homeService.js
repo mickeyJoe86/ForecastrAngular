@@ -1,14 +1,16 @@
 angular.module('components.homeService', [])
-    .service('HomeService', ['$http', '$q', function ($http, $q) {
-        this.getForecast = function(lat, lng) {
-            var deferred = $q.defer();
-            $http({
-                url: '/api/forecast',
-                method: 'POST',
+	.service('HomeService', ['$http', function ($http) {
+		var HomeService = {};
+
+		HomeService.getForecast = function (lat, lng) {
+			return $http({
+				url: '/api/forecast',
+				method: 'POST',
 				data: { lat: lat, lng: lng }
-            }).then(function(data){
-                deferred.resolve(data);
-            });
-            return deferred.promise;
-        }
-    }]);
+			}).then(function (data) {
+				return data;
+			});
+		};
+
+		return HomeService;
+	}]);
