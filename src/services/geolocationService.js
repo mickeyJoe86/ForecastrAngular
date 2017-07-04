@@ -1,6 +1,8 @@
 angular.module('services.geolocation', [])
-    .service('GelocationService', ['$http', '$q', function ($http, $q) {
-        this.getCoordinates = function(searchTerm) {
+    .service('GelocationService', ['$http', function ($http) {
+        var GelocationService = {};
+
+		GelocationService.getCoordinates = function(searchTerm) {
             var deferred = $q.defer();
             $http({
                 url: '/api/geolocate',
@@ -10,5 +12,6 @@ angular.module('services.geolocation', [])
                 deferred.resolve(data);
             });
             return deferred.promise;
-        }
+        };
+		return GelocationService;
     }]);
