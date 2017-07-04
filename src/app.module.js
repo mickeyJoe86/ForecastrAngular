@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ui.bootstrap', 'shared.module', 'components.module'])
+angular.module('app', ['ui.router', 'ui.bootstrap', 'services.module', 'shared.module', 'components.module'])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 		var helloState = {
 			name: 'home',

@@ -1,5 +1,5 @@
-angular.module('components.headerService', [])
-    .service('HeaderService', ['$http', '$q', function ($http, $q) {
+angular.module('services.geolocation', [])
+    .service('GelocationService', ['$http', '$q', function ($http, $q) {
         this.getCoordinates = function(searchTerm) {
             var deferred = $q.defer();
             $http({
