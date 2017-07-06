@@ -21,6 +21,20 @@ module.exports = function (config) {
 		autoWatch: true,
 		browsers: ['Chrome'],
 		singleRun: false,
-		concurrency: Infinity
-	})
+		concurrency: Infinity,
+		customLaunchers: {
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
+			}
+		}
+	});
+
+	if (process.env.TRAVIS) {
+		config.browsers = ['Chrome_travis_ci'];
+	}
+
+	config.set(config);
 }
+
+
