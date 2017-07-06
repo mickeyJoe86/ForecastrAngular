@@ -5,7 +5,6 @@ describe('HeaderComponentController', () => {
 	beforeEach(angular.mock.module('components.headerComponent'));
 	beforeEach(angular.mock.module('services.geolocation'));
 
-
 	beforeEach(inject(function (_$controller_, _GelocationService_, _$location_) {
 		$controller = _$controller_;
 		GelocationService = _GelocationService_;
@@ -18,5 +17,14 @@ describe('HeaderComponentController', () => {
 		expect(HeaderComponentController).toBeDefined();
 	});
 
-	describe('searchLocation()', () => {});
+	describe('ctrl.name', () => {
+		it('Should be named Forecastr', () => {
+			expect(HeaderComponentController.name).toEqual('Forecastr');
+		});
+	});
+	describe('ctrl.searchLocation()', () => {
+		it('should be defined', () => {
+			expect(HeaderComponentController.searchLocation).toBeDefined();
+		});
+	});
 });
