@@ -13,14 +13,14 @@ module.exports = function (config) {
 		],
 		preprocessors: {
 		},
-		reporters: ['spec'],
+		reporters: ['spec', 'coverage'],
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
 		autoWatch: true,
 		browsers: ['PhantomJS', 'PhantomJS_custom'],
 		singleRun: false,
-		concurrency: Infinity,		
+		concurrency: Infinity,
 		customLaunchers: {
 			'PhantomJS_custom': {
 				base: 'PhantomJS',
@@ -36,6 +36,14 @@ module.exports = function (config) {
 		},
 		phantomjsLauncher: {
 			exitOnResourceError: true
+		},
+		preprocessors: {
+			'src/components/**/*.js' : ['coverage'],
+			'src/services/**/*.js': ['coverage']
+		},
+		coverageReporter: {
+			type: 'html',
+			dir: 'coverage/'
 		}
 	});
 }
