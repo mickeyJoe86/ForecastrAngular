@@ -12,6 +12,8 @@ module.exports = function (config) {
 		exclude: [
 		],
 		preprocessors: {
+			'src/components/**/*.js' : ['coverage'],
+			'src/services/**/*.js': ['coverage']
 		},
 		reporters: ['spec', 'coverage'],
 		port: 9876,
@@ -36,10 +38,6 @@ module.exports = function (config) {
 		},
 		phantomjsLauncher: {
 			exitOnResourceError: true
-		},
-		preprocessors: {
-			'src/components/**/*.js' : ['coverage'],
-			'src/services/**/*.js': ['coverage']
 		},
 		coverageReporter: {
 			type: 'html',
