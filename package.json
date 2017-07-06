@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
-    "start": "gulp"
+    "karma": "karma start",
+    "start": "gulp",
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "author": "",
   "license": "ISC",
