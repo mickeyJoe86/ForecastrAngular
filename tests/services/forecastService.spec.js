@@ -1,4 +1,4 @@
-describe('Forecast service', function() {
+describe('Forecast service', () => {
 	var ForecastService, $q, $httpBackend;
 	var RESPONSE_SUCCESS = {};
 	beforeEach(angular.mock.module('services.forecast'));

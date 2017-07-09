@@ -6,7 +6,7 @@
   "scripts": {
     "karma": "karma start",
     "start": "gulp",
-    "test": "karma start --single-run --browsers PhantomJS",
+    "test": "karma start --single-run --browsers Chrome",
     "test:coverage": "istanbul cover _karma"
   },
   "author": "",
