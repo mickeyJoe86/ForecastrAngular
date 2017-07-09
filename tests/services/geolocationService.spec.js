@@ -1,7 +1,7 @@
-describe('Geolocation service', function() {
-	var GelocationService, $q, $httpBackend;
-	var API = '/api/geolocate/';
-	var RESPONSE_SUCCESS = {
+describe('Geolocation service', () => {
+	let GelocationService, $q, $httpBackend;
+	let API = '/api/geolocate/';
+	let RESPONSE_SUCCESS = {
 		results: [
 			{
 				formatted_address: "Louisville, KY, USA",
@@ -15,33 +15,33 @@ describe('Geolocation service', function() {
 		]
 	};
 	beforeEach(angular.mock.module('services.geolocation'));
-	beforeEach(inject(function(_GelocationService_, _$q_, _$httpBackend_) {
+	beforeEach(inject((_GelocationService_, _$q_, _$httpBackend_) => {
 		GelocationService = _GelocationService_;
 		$q = _$q_;
 		$httpBackend = _$httpBackend_;
 	}));
-	it('should exist', function() {
+	it('should exist', () => {
 		expect(GelocationService).toBeDefined();
 	});
-	describe('getCoordinates()', function() {
-		var result;
+	describe('getCoordinates()', () => {
+		let result;
 
-		beforeEach(function() {
+		beforeEach(() => {
 			result = {};
 			spyOn(GelocationService, 'getCoordinates').and.callThrough();
 		});
-		it('should be defined', function() {
+		it('should be defined', () => {
 			expect(GelocationService.getCoordinates).toBeDefined();
 		});
-		it('should return a location when called with a search term', function() {
-			var searchTerm = "Louisville, KY";
+		it('should return a location when called with a search term', () => {
+			let searchTerm = "Louisville, KY";
 			$httpBackend.whenPOST(API, { searchTerm: searchTerm }).respond(200, $q.when(RESPONSE_SUCCESS));
 
 			expect(GelocationService.getCoordinates).not.toHaveBeenCalled();
 			expect(result).toEqual({});
 
 			GelocationService.getCoordinates(searchTerm)
-				.then(function(res) {
+				.then((res) => {
 					result = res;
 				});
 			$httpBackend.flush();

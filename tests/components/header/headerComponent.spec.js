@@ -1,11 +1,11 @@
-describe('HeaderComponentController', function() {
-	var $controller, HeaderComponentController, GelocationService, $location;
+describe('HeaderComponentController', () => {
+	let $controller, HeaderComponentController, GelocationService, $location;
 
 	beforeEach(angular.mock.module('ui.router'));
 	beforeEach(angular.mock.module('components.headerComponent'));
 	beforeEach(angular.mock.module('services.geolocation'));
 
-	beforeEach(inject(function (_$controller_, _GelocationService_, _$location_) {
+	beforeEach(inject((_$controller_, _GelocationService_, _$location_) => {
 		$controller = _$controller_;
 		GelocationService = _GelocationService_;
 		$location = _$location_;
@@ -13,17 +13,17 @@ describe('HeaderComponentController', function() {
 		HeaderComponentController = $controller('HeaderComponentController', { GelocationService: GelocationService, $location: $location });
 	}));
 
-	it('should exist', function() {
+	it('should exist', () => {
 		expect(HeaderComponentController).toBeDefined();
 	});
 
-	describe('ctrl.name', function() {
-		it('Should be named Forecastr', function() {
+	describe('ctrl.name', () => {
+		it('Should be named Forecastr', () => {
 			expect(HeaderComponentController.name).toEqual('Forecastr');
 		});
 	});
-	describe('ctrl.searchLocation()', function() {
-		it('should be defined', function() {
+	describe('ctrl.searchLocation()', () => {
+		it('should be defined', () => {
 			expect(HeaderComponentController.searchLocation).toBeDefined();
 		});
 	});
