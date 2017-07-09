@@ -12,7 +12,7 @@ module.exports = function (config) {
 		exclude: [
 		],
 		preprocessors: {
-			'src/components/**/*.js' : ['coverage'],
+			'src/components/**/*.js': ['coverage'],
 			'src/services/**/*.js': ['coverage']
 		},
 		reporters: ['spec', 'coverage'],
@@ -24,24 +24,18 @@ module.exports = function (config) {
 		singleRun: false,
 		concurrency: Infinity,
 		customLaunchers: {
-			'PhantomJS_custom': {
-				base: 'PhantomJS',
-				options: {
-					windowName: 'my-window',
-					settings: {
-						webSecurityEnabled: false
-					},
-				},
-				flags: ['--load-images=true'],
-				debug: true
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
 			}
-		},
-		phantomjsLauncher: {
-			exitOnResourceError: true
 		},
 		coverageReporter: {
 			type: 'html',
 			dir: 'coverage/'
 		}
 	});
+}
+
+if (process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci'];
 }
