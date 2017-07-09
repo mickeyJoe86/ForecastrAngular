@@ -34,8 +34,8 @@ module.exports = function (config) {
 			dir: 'coverage/'
 		}
 	});
-}
 
-if (process.env.TRAVIS) {
-    config.browsers = ['Chrome_travis_ci'];
+	if (process.env.TRAVIS) {
+		config.browsers = ['Chrome_travis_ci'];
+	}
 }
