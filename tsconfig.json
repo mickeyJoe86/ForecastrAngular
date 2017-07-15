@@ -1,9 +1,14 @@
 {
-    "files": [
-        "src/app.ts"
-    ],
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "target": "es2015"
-    }
+	"files": [
+		"src/app.ts"
+	],
+	"compilerOptions": {
+		"noImplicitAny": true,
+		"target": "es2015",
+		"types": [
+			"angular",
+			"angular-mocks",
+			"jasmine"
+		]
+	}
 }

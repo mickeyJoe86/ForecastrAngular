@@ -4,11 +4,13 @@ import Header from './components/header';
 import Main from './components/main';
 import Footer from './components/Footer';
 
-var module = angular.module("ForecastrApp", [])
+let module = angular.module("ForecastrApp", [])
 	.service('ForecastService', ForecastService)
 	.component('header', Header)
 	.component('main', Main)
 	.component('footer', Footer);
+
+export default module;
 
 angular.element(document).ready(function () {
 	angular.bootstrap(document, ["ForecastrApp"]);

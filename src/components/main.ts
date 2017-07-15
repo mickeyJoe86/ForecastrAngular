@@ -21,7 +21,6 @@ const Main = {
 
 		$onInit() {
 			this.forecastService.getForecast(38.328732, -85.764771).then((res) => {
-				console.log(res.data);
 				this.model = res.data;
 			});
 
