@@ -6,16 +6,11 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="/dist/assets/css/all.css" />
 </head>
-<body ng-app="app">
-	<headernav-component></headernav-component>
-	<div id="main-containter" class="container">
-		<ui-view></ui-view>
-	</div>
-	<shared-footer></shared-footer>
+<body ng-app="ForecastrApp">
+	<header></header>
+	<main id="main-containter"></main>
+	<footer class="footer"></footer>
 	<!--main angular-->
-	<script src="/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-	<script src="/ui-bootstrap.js"></script>
-	<script src="/dist/scripts.min.js"></script>
+	<script src="/dist/bundle.js"></script>
 </body>
 </html>

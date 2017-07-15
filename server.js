@@ -10,8 +10,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('./node_modules/angular/'));
-app.use(express.static('./node_modules/angular-ui-bootstrap/dist/'));
+// app.use(express.static('./node_modules/angular/'));
+// app.use(express.static('./node_modules/angular-ui-bootstrap/dist/'));
 
 app.get('/', (req, res) => {
 	res.render('index');
