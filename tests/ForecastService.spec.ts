@@ -1,8 +1,22 @@
 import {} from 'jasmine';
-import { ForecastService } from '../src/services/ForecastService';
+import * as ng from "angular";
+import "angular-mocks";
+
+import { ForecastService } from "../src/services/ForecastService";
 
 describe("ForecastService", () => {
-	it('should pass sanity check', () => {
-		expect(1 + 1).toEqual(2);
+
+    let service: ForecastService;
+    let $rootScope: ng.IRootScopeService;
+
+    beforeEach(ng.mock.module("ForecastrApp"));
+
+    beforeEach(inject((_service_, _$rootScope_) => {
+        service = _service_;
+        $rootScope = _$rootScope_;
+    }));
+
+    it("should get message", () => {
+		expect(1+2).toEqual(3);
 	});
 });
