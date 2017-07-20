@@ -2,17 +2,17 @@ import {} from 'jasmine';
 import * as ng from "angular";
 import 'angular-mocks';
 
-import { ForecastService } from '../src/services/ForecastService';
+import { GeolocationService } from '../src/services/GeolocationService';
 
-describe('ForecastService', () => {
+describe('GelocationService', () => {
 
-    let service: ForecastService;
+    let service: GeolocationService;
 	let http: ng.IHttpService;
 	let RESPONSE_SUCCESS = {};
 
     beforeEach(ng.mock.module('ForecastrApp'));
 
-    beforeEach(inject((ForecastService: ForecastService, $http: ng.IHttpService) => {
+    beforeEach(inject((ForecastService: GeolocationService, $http: ng.IHttpService) => {
         service = ForecastService;
         http = $http;
     }));
