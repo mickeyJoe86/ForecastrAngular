@@ -3,6 +3,7 @@ import 'angular-ui-router';
 
 import { ForecastService } from './services/ForecastService';
 import { GeolocationService } from './services/GeolocationService';
+import { Config } from './Config';
 
 import Header from './components/Header';
 import Main from './components/Main';
@@ -13,7 +14,8 @@ angular.module('ForecastrApp', ['ui.router'])
 	.service('ForecastService', ForecastService)
 	.component('header', Header)
 	.component('main', Main)
-	.component('footer', Footer);
+	.component('footer', Footer)
+	.config(Config);
 
 angular.element(document).ready(function () {
 	angular.bootstrap(document, ['ForecastrApp']);

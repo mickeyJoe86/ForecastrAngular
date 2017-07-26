@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/angular-mocks": "^1.5.10",
+    "@types/angular-ui-router": "^1.1.37",
     "angular": "^1.6.4",
     "angular-resource": "^1.6.5",
     "angular-ui-bootstrap": "^2.5.0",
