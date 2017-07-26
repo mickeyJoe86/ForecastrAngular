@@ -7,6 +7,7 @@
 		"target": "es2015",
 		"types": [
 			"angular",
+			"angular-ui-router",
 			"angular-mocks",
 			"jasmine"
 		]

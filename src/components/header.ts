@@ -1,3 +1,5 @@
+import { IGeolocationService, GeolocationService }  from '../services/GeolocationService';
+
 const Header = {
 	template: `
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -6,9 +8,9 @@ const Header = {
 					<a class="navbar-brand" href="#">{{ $ctrl.name }}</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right">
+					<form ng-submit="$ctrl.searchLocation()" class="navbar-form navbar-right">
 						<div class="form-group">
-							<input type="text" placeholder="Search your location" class="form-control">
+							<input type="text" placeholder="Search your location" class="form-control" ng-model="$ctrl.searchTerm">
 						</div>
 						<button type="submit" class="btn btn-success">Search</button>
 					</form>
@@ -18,9 +20,19 @@ const Header = {
 	`,
 	controller: class HeaderController {
 		name: string;
-		constructor() {}
+		searchTerm: string;
+
+		static $inject = ['GeolocationService'];
+		constructor(private geolocationService: GeolocationService) { }
+
 		$onInit() {
 			this.name = "Forecastr";
+		}
+
+		public searchLocation () {
+			this.geolocationService.getCoordinates(this.searchTerm).then((res) => {
+				console.log(res);
+			});
 		}
 
 	},
