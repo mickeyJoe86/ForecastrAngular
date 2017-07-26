@@ -1,4 +1,4 @@
-import { IGeolocationService, GeolocationService }  from '../services/GeolocationService';
+import { GeolocationService }  from '../services/GeolocationService';
 
 const Header = {
 	template: `
@@ -22,16 +22,17 @@ const Header = {
 		name: string;
 		searchTerm: string;
 
-		static $inject = ['GeolocationService'];
-		constructor(private geolocationService: GeolocationService) { }
+		static $inject = ['GeolocationService', '$location'];
+		constructor(private geolocationService: GeolocationService, private $location: ng.ILocationService) { }
 
 		$onInit() {
 			this.name = "Forecastr";
 		}
 
 		public searchLocation () {
-			this.geolocationService.getCoordinates(this.searchTerm).then((res) => {
-				console.log(res);
+			this.geolocationService.getCoordinates(this.searchTerm).then((res: any) => {
+				let latLong = res.results[0].geometry.location;
+				this.$location.url(`${ latLong.lat }/${ latLong.lng }`);
 			});
 		}
 

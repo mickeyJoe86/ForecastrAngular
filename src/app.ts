@@ -5,9 +5,11 @@ import { ForecastService } from './services/ForecastService';
 import { GeolocationService } from './services/GeolocationService';
 import { Config } from './Config';
 
+
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+
 
 angular.module('ForecastrApp', ['ui.router'])
 	.service('GeolocationService', GeolocationService)

@@ -12,18 +12,18 @@ const Main = {
 			</div>
 		</div>
 	`,
-	controller: class HeaderController {
+	controller: class MainController {
 		name: string;
 		model: {};
 
-		static $inject = ['ForecastService'];
-		constructor(private forecastService: ForecastService) {}
+		static $inject = ['ForecastService', '$stateParams'];
+		constructor(private forecastService: ForecastService, private $stateParams: ng.ui.IStateParamsService) {}
 
 		$onInit() {
-			this.forecastService.getForecast(38.328732, -85.764771).then((res) => {
+			this.forecastService.getForecast(this.$stateParams.lat, this.$stateParams.long).then((res) => {
 				this.model = res.data;
+				console.log(res)
 			});
-
 		}
 
 	},

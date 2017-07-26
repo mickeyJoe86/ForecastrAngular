@@ -4,10 +4,10 @@ export const Config = ['$stateProvider', '$urlRouterProvider', (
 
 	let helloState = {
 		name: 'home',
-		url: '/home',
-		component: 'Main'
+		url: '/:lat/:long',
+		component: 'main'
 	}
 
 	$stateProvider.state(helloState);
-	$urlRouterProvider.otherwise('/foo');
+	$urlRouterProvider.otherwise('/38.9071923/-77.0368707');
 }];

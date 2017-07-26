@@ -1,8 +1,4 @@
-export interface IGeolocationService {
-	getCoordinates(searchTerm: string): ng.IPromise<{}>;
-}
-
-export class GeolocationService implements IGeolocationService {
+export class GeolocationService {
 
 	static $inject = ['$http'];
 	constructor(private $http: ng.IHttpService) { }
