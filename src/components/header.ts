@@ -1,22 +1,19 @@
-import { GeolocationService }  from '../services/GeolocationService';
+import { GeolocationService } from '../services/GeolocationService';
 
 const Header = {
 	template: `
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">{{ $ctrl.name }}</a>
+		<div layout="column" layout-fill>
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2 md-truncate flex>Forecastr</h2>
 				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<form ng-submit="$ctrl.searchLocation()" class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" placeholder="Search your location" class="form-control" ng-model="$ctrl.searchTerm">
-						</div>
-						<button type="submit" class="btn btn-success">Search</button>
-					</form>
-				</div>
-			</div>
-		</nav>
+				<md-content>
+					<div id="main-containter">
+						<ui-view></ui-view>
+					</div>
+				</md-content>
+			</md-toolbar>
+		</div>
 	`,
 	controller: class HeaderController {
 		name: string;
@@ -29,10 +26,10 @@ const Header = {
 			this.name = "Forecastr";
 		}
 
-		public searchLocation () {
+		public searchLocation() {
 			this.geolocationService.getCoordinates(this.searchTerm).then((res: any) => {
 				let latLong = res.results[0].geometry.location;
-				this.$location.url(`${ latLong.lat }/${ latLong.lng }`);
+				this.$location.url(`${latLong.lat}/${latLong.lng}`);
 			});
 		}
 

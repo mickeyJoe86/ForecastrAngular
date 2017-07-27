@@ -1,5 +1,6 @@
 import * as angular from 'angular';
 import 'angular-ui-router';
+import 'angular-material';
 
 import { ForecastService } from './services/ForecastService';
 import { GeolocationService } from './services/GeolocationService';
@@ -11,7 +12,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 
-angular.module('ForecastrApp', ['ui.router'])
+angular.module('ForecastrApp', ['ui.router', 'ngMaterial'])
 	.service('GeolocationService', GeolocationService)
 	.service('ForecastService', ForecastService)
 	.component('header', Header)

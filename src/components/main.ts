@@ -22,7 +22,6 @@ const Main = {
 		$onInit() {
 			this.forecastService.getForecast(this.$stateParams.lat, this.$stateParams.long).then((res) => {
 				this.model = res.data;
-				console.log(res)
 			});
 		}
 
