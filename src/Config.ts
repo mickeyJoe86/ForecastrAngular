@@ -15,7 +15,7 @@ export const Config = ['$stateProvider', '$urlRouterProvider', '$mdThemingProvid
 	$mdThemingProvider.theme('default').primaryPalette('blue');
 	
 	var whiteMap = $mdThemingProvider.extendPalette('grey', { '500': '#ffffff', 'contrastDefaultColor': 'dark' });
-	var blackMap = $mdThemingProvider.extendPalette('grey', { '500': '#aaaaaa', 'contrastDefaultColor': 'dark' });
+	var blackMap = $mdThemingProvider.extendPalette('grey', { '500': '#111111', 'contrastDefaultColor': 'dark' });
 	
 	$mdThemingProvider.definePalette('white', whiteMap);
 	$mdThemingProvider.definePalette('black', blackMap);

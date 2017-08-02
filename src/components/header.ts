@@ -11,16 +11,18 @@ const Header = {
 			</div>
 		</md-toolbar>	
 		<md-toolbar md-colors="::{background: 'white'}" ng-show="showSearch" class="md-whiteframe-1dp">
-			<div class="md-toolbar-tools">
-				<md-button ng-click="showSearch = !showSearch">
-					<md-icon md-colors="::{color: 'black'}">arrow_back</md-icon>
-				</md-button>
-				<md-input-container md-theme="input" flex>
-            		<label>&nbsp;</label>
-            		<input ng-model="search.who" placeholder="enter search">
-          		</md-input-container>
-				<md-button class="md-raised md-primary">Search</md-button>
-			</div>
+			<form ng-submit="$header.searchLocation()">
+				<div class="md-toolbar-tools">
+					<md-button ng-click="showSearch = !showSearch">
+						<md-icon md-colors="::{color: 'black'}">arrow_back</md-icon>
+					</md-button>					
+					<md-input-container flex>						
+						<label>&nbsp;</label>
+						<input placeholder="Search city, zip, or place" ng-model="$header.searchTerm" autocomplete="off">						
+					</md-input-container>
+					<md-button class="md-raised md-primary" type="submit">Search</md-button>				
+				</div>
+			</form>
 		</md-toolbar>	
 	`,
 	controller: class HeaderController {
@@ -38,11 +40,12 @@ const Header = {
 			this.geolocationService.getCoordinates(this.searchTerm).then((res: any) => {
 				let latLong = res.results[0].geometry.location;
 				this.$location.url(`${latLong.lat}/${latLong.lng}`);
+				this.searchTerm = '';
 			});
 		}
 
 	},
-	controllerAs: "$ctrl"
+	controllerAs: "$header"
 };
 
 export default Header;
