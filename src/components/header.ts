@@ -28,6 +28,7 @@ const Header = {
 	controller: class HeaderController {
 		name: string;
 		searchTerm: string;
+		showSearch: boolean;
 
 		static $inject = ['GeolocationService', '$location'];
 		constructor(private geolocationService: GeolocationService, private $location: ng.ILocationService) { }
@@ -41,6 +42,7 @@ const Header = {
 				let latLong = res.results[0].geometry.location;
 				this.$location.url(`${latLong.lat}/${latLong.lng}`);
 				this.searchTerm = '';
+				this.showSearch = false;
 			});
 		}
 
