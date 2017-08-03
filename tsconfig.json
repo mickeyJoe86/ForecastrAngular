@@ -1,6 +1,6 @@
 {
 	"files": [
-		"src/Bootstrap.ts"
+		"src/*.ts"
 	],
 	"compilerOptions": {
 		"noImplicitAny": true,
