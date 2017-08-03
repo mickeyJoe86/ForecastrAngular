@@ -1,25 +1,11 @@
-import * as angular from 'angular';
-import 'angular-ui-router';
-import 'angular-material';
+const App = {
+	template: `
+		<header></header>
+		<div id="main-containter">
+			<ui-view></ui-view>
+		</div>
+		<footer class="footer"></footer>
+	`
+};
 
-import { ForecastService } from './services/ForecastService';
-import { GeolocationService } from './services/GeolocationService';
-import { Config } from './Config';
-
-
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-
-
-angular.module('ForecastrApp', ['ui.router', 'ngMaterial'])
-	.service('GeolocationService', GeolocationService)
-	.service('ForecastService', ForecastService)
-	.component('header', Header)
-	.component('main', Main)
-	.component('footer', Footer)
-	.config(Config);
-
-angular.element(document).ready(function () {
-	angular.bootstrap(document, ['ForecastrApp']);
-});
+export default App;
