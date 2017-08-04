@@ -1,9 +1,7 @@
 const App = {
 	template: `
 		<header></header>
-		<div id="main-containter">
-			<ui-view></ui-view>
-		</div>
+		<ui-view id="main-container"></ui-view>		
 		<footer class="footer"></footer>
 	`
 };

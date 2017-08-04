@@ -4,7 +4,7 @@ const Header = {
 	template: `
 		<md-toolbar ng-show="!$header.showSearch" class="md-whiteframe-1dp">
 			<div class="md-toolbar-tools">
-				<h2 md-truncate flex>Forecastr</h2>
+				<h2 md-truncate flex>{{ $header.name }}</h2>
 				<md-button ng-click="$header.showSearch = !$header.showSearch" md-colors="::{color: 'white'}">
 					<md-icon>search</md-icon>
 				</md-button>

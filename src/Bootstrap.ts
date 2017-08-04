@@ -8,6 +8,7 @@ import { Config } from './Config';
 
 import App from './App';
 import Header from './components/Header';
+import Tabs from './components/Tabs';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
@@ -16,8 +17,9 @@ angular.module('ForecastrApp', ['ui.router', 'ngMaterial'])
 	.service('GeolocationService', GeolocationService)
 	.service('ForecastService', ForecastService)
 	.component('app', App)
-	.component('header', Header)
+	.component('header', Header)	
 	.component('main', Main)
+	.component('tabs', Tabs)
 	.component('footer', Footer)
 	.config(Config);
 
